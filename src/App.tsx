@@ -26,6 +26,19 @@ import AddActivity from './pages/AddActivity/AddActivity';
 import { addCircleOutline, beerOutline } from 'ionicons/icons';
 import ActivitiesContextProvider from './data/ActivitiesContextProvider';
 
+import PropTypes from 'prop-types'; // ES6
+import Lottie from 'react-lottie';
+import animationData from './125469-meditating-panda.json'
+
+const defaultOptions = {
+    loop:true,
+    autoplay: true,
+    animationData: animationData,
+    renderSettings: {
+        PreserveAspectRatio: "xMidYMid slice"
+    }
+};
+
 const App: React.FC = () => (
     <IonApp>
         <IonReactRouter>
@@ -49,7 +62,15 @@ const App: React.FC = () => (
                                 <IonLabel>Añadir producto</IonLabel>
                             </IonItem>
                         </IonMenuToggle>
+                        <div>
+                        <Lottie 
+	                        options={defaultOptions}
+                        height={400}
+                        width={400}
+                        />
+                    </div>
                     </IonList>
+                    
                 </IonContent>
             </IonMenu>
             <ActivitiesContextProvider>
